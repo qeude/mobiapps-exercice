@@ -41,4 +41,16 @@ class APIService {
             }
         }
     }
+    
+    static func getCategoriesByGroup(group : Group, completion:@escaping (Result<[Category], Error>) -> Void) {
+        let ids: [String] = group.categories.map{String($0)}
+        let param : Parameters = [
+            "ids": ids.joined(separator: ",")
+        ]
+        AF.request("https://api.guildwars2.com/v2/achievements/categories", parameters: param)
+            .responseDecodable{ (response: DataResponse<[Category]>) in
+                completion(response.result)
+                
+        }
+    }
 }
