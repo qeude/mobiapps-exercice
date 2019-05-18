@@ -6,7 +6,7 @@ target 'mobiapps-exercice' do
   use_frameworks!
 
   # Pods for mobiapps-exercice
-  pod 'Alamofire', '~> 4.7'
+  pod 'Alamofire', '~> 5.0.0-beta.5'
   target 'mobiapps-exerciceTests' do
     inherit! :search_paths
     # Pods for testing
