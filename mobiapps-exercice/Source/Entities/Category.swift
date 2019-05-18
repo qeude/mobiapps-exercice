@@ -8,11 +8,6 @@
 
 import Foundation
 
-struct CategoryList : Codable {
-    let date : [Category]
-}
-
-
 struct Category : Codable{
     var identifier: Int
     var name: String

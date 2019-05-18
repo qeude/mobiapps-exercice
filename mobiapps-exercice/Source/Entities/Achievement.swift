@@ -8,11 +8,6 @@
 
 import Foundation
 
-struct AchievementList : Codable {
-    let data : [Achievement]
-}
-
-
 struct Achievement: Codable{
     var identifier: Int
     var name : String

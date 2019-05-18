@@ -8,23 +8,19 @@
 
 import Foundation
 
-struct GroupList: Codable {
-    let data : [Group]
-}
-
-struct Group: Codable {
+struct Group : Codable {
     
     var identifier: String
     var name: String
     var description: String
     var order : Int
-    var categoriesIdentifiers: [Int]
+    var categories : [Int]
     
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey{
         case identifier = "id"
         case name
         case description
         case order
-        case categoriesIdentifiers = "categories"
+        case categories
     }
 }
