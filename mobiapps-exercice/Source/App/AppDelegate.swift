@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.makeKeyAndVisible()
-        let navController = UINavigationController(rootViewController: GroupsViewController())
+        let navController = UINavigationController(rootViewController: CategoriesViewController())
         window?.rootViewController = navController
         
         return true

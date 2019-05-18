@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupsViewController : UITableViewController{
+class CategoriesViewController : UITableViewController{
     let cellReuseId = "cellReuseId"
     private var groups : [Group] = []
     private var categories : [[Category]] = []
@@ -19,13 +19,13 @@ class GroupsViewController : UITableViewController{
             switch result{
             case .success(let groups):
                 self.groups = groups
-                for group in groups{
+                for (idx,group) in groups.enumerated(){
                     dispatchGroup.enter()
                     APIService.getCategoriesByGroup(group: group){
                         res in
                         switch res{
                         case .success(let categories):
-                            self.categories.append(categories)
+                            self.categories.insert(categories, at: idx)
                             dispatchGroup.leave()
                         case .failure(let err):
                             print(err)
@@ -40,10 +40,10 @@ class GroupsViewController : UITableViewController{
             }
         }
         
-        navigationItem.title = "Groups"
+        navigationItem.title = "Categories"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
+        tableView.register(CategoryCell.self, forCellReuseIdentifier: cellReuseId)
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -58,6 +58,10 @@ class GroupsViewController : UITableViewController{
         return view
     }
     
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40.0
     }
@@ -71,11 +75,10 @@ class GroupsViewController : UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! CategoryCell
         
-        let name = "\(categories[indexPath.section][indexPath.row].name)"
-        cell.textLabel?.text = name
-        //cell.textLabel?.text = self.groups[indexPath.row].name
+        let category = categories[indexPath.section][indexPath.row]
+        cell.category = category
         return cell
     }
 }
