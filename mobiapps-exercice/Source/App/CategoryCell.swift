@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 
+/// Custom cell for the Categories Table View
 class CategoryCell : UITableViewCell {
     
     var category : Category? {
@@ -34,6 +35,7 @@ class CategoryCell : UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         addSubview(categoryImage)
         addSubview(categoryNameLabel)
         
