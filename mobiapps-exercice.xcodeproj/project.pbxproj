@@ -7,16 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0126D9DF228C9105000CE0AA /* NetwokError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126D9DE228C9105000CE0AA /* NetwokError.swift */; };
+		013653C022903D6E00B165AE /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013653BF22903D6E00B165AE /* CategoriesViewController.swift */; };
+		01737F57229053240054D889 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01737F56229053240054D889 /* CategoryCell.swift */; };
+		01737F5A229054AB0054D889 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01737F59229054AB0054D889 /* Extension.swift */; };
+		01737F5C22915E520054D889 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01737F5B22915E520054D889 /* AchievementsViewController.swift */; };
+		01737F5E229198A00054D889 /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01737F5D229198A00054D889 /* GroupTests.swift */; };
+		01737F6022919CDD0054D889 /* CategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01737F5F22919CDD0054D889 /* CategoryTests.swift */; };
+		01737F6222919CF30054D889 /* AchievementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01737F6122919CF30054D889 /* AchievementTests.swift */; };
+		01737F6422919E440054D889 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01737F6322919E440054D889 /* APIServiceTests.swift */; };
+		01737F682291A5120054D889 /* AchievementDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01737F672291A5120054D889 /* AchievementDetailsViewController.swift */; };
 		01E3215B228B3D340038FEF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3215A228B3D340038FEF0 /* AppDelegate.swift */; };
-		01E3215D228B3D340038FEF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3215C228B3D340038FEF0 /* ViewController.swift */; };
-		01E32160228B3D340038FEF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E3215E228B3D340038FEF0 /* Main.storyboard */; };
 		01E32162228B3D350038FEF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E32161228B3D350038FEF0 /* Assets.xcassets */; };
 		01E32165228B3D350038FEF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E32163228B3D350038FEF0 /* LaunchScreen.storyboard */; };
-		01E32170228B3D350038FEF0 /* mobiapps_exerciceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3216F228B3D350038FEF0 /* mobiapps_exerciceTests.swift */; };
 		01E3217B228B3D350038FEF0 /* mobiapps_exerciceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3217A228B3D350038FEF0 /* mobiapps_exerciceUITests.swift */; };
 		01E3218D228B447B0038FEF0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3218C228B447B0038FEF0 /* Group.swift */; };
 		01E3218F228B44870038FEF0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3218E228B44870038FEF0 /* Category.swift */; };
 		01E32191228B44970038FEF0 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E32190228B44970038FEF0 /* Achievement.swift */; };
+		01E32194228B4AA60038FEF0 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E32193228B4AA60038FEF0 /* APIService.swift */; };
 		0D66B2768A8CAFB66495BBB1 /* Pods_mobiapps_exercice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80511AC2BC0627B41A7D279 /* Pods_mobiapps_exercice.framework */; };
 		90F3B310FE8634899D82709F /* Pods_mobiapps_exerciceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD790A0870C56F0889691FF5 /* Pods_mobiapps_exerciceUITests.framework */; };
 		CEF3CB238D459968B8179CA6 /* Pods_mobiapps_exerciceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D42298D5E58365196A33C54 /* Pods_mobiapps_exerciceTests.framework */; };
@@ -40,15 +48,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0126D9DE228C9105000CE0AA /* NetwokError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwokError.swift; sourceTree = "<group>"; };
+		013653BF22903D6E00B165AE /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		01737F56229053240054D889 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryCell.swift; path = "mobiapps-exercice/Source/App/CategoryCell.swift"; sourceTree = SOURCE_ROOT; };
+		01737F59229054AB0054D889 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		01737F5B22915E520054D889 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		01737F5D229198A00054D889 /* GroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTests.swift; sourceTree = "<group>"; };
+		01737F5F22919CDD0054D889 /* CategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTests.swift; sourceTree = "<group>"; };
+		01737F6122919CF30054D889 /* AchievementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementTests.swift; sourceTree = "<group>"; };
+		01737F6322919E440054D889 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		01737F672291A5120054D889 /* AchievementDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailsViewController.swift; sourceTree = "<group>"; };
 		01E32157228B3D340038FEF0 /* mobiapps-exercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobiapps-exercice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E3215A228B3D340038FEF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01E3215C228B3D340038FEF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		01E3215F228B3D340038FEF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01E32161228B3D350038FEF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01E32164228B3D350038FEF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01E32166228B3D350038FEF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E3216B228B3D350038FEF0 /* mobiapps-exerciceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobiapps-exerciceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01E3216F228B3D350038FEF0 /* mobiapps_exerciceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobiapps_exerciceTests.swift; sourceTree = "<group>"; };
 		01E32171228B3D350038FEF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E32176228B3D350038FEF0 /* mobiapps-exerciceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobiapps-exerciceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E3217A228B3D350038FEF0 /* mobiapps_exerciceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobiapps_exerciceUITests.swift; sourceTree = "<group>"; };
@@ -56,6 +71,7 @@
 		01E3218C228B447B0038FEF0 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		01E3218E228B44870038FEF0 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		01E32190228B44970038FEF0 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		01E32193228B4AA60038FEF0 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		2D42298D5E58365196A33C54 /* Pods_mobiapps_exerciceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobiapps_exerciceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		831DC3C4FE5F51E1AE63435C /* Pods-mobiapps-exerciceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobiapps-exerciceTests.release.xcconfig"; path = "Target Support Files/Pods-mobiapps-exerciceTests/Pods-mobiapps-exerciceTests.release.xcconfig"; sourceTree = "<group>"; };
 		96C7B73DF2366B4291F8B740 /* Pods-mobiapps-exerciceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobiapps-exerciceUITests.release.xcconfig"; path = "Target Support Files/Pods-mobiapps-exerciceUITests/Pods-mobiapps-exerciceUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +111,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		013653BC22903D2600B165AE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				013653BF22903D6E00B165AE /* CategoriesViewController.swift */,
+				01737F56229053240054D889 /* CategoryCell.swift */,
+				01737F5B22915E520054D889 /* AchievementsViewController.swift */,
+				01737F672291A5120054D889 /* AchievementDetailsViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		01737F582290549E0054D889 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01737F59229054AB0054D889 /* Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		01E3214E228B3D340038FEF0 = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +157,6 @@
 			children = (
 				01E32189228B3DAE0038FEF0 /* Resources */,
 				01E32188228B3D9D0038FEF0 /* Source */,
-				01E3215C228B3D340038FEF0 /* ViewController.swift */,
 			);
 			path = "mobiapps-exercice";
 			sourceTree = "<group>";
@@ -130,8 +164,11 @@
 		01E3216E228B3D350038FEF0 /* mobiapps-exerciceTests */ = {
 			isa = PBXGroup;
 			children = (
-				01E3216F228B3D350038FEF0 /* mobiapps_exerciceTests.swift */,
 				01E32171228B3D350038FEF0 /* Info.plist */,
+				01737F5D229198A00054D889 /* GroupTests.swift */,
+				01737F5F22919CDD0054D889 /* CategoryTests.swift */,
+				01737F6122919CF30054D889 /* AchievementTests.swift */,
+				01737F6322919E440054D889 /* APIServiceTests.swift */,
 			);
 			path = "mobiapps-exerciceTests";
 			sourceTree = "<group>";
@@ -148,6 +185,10 @@
 		01E32188228B3D9D0038FEF0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				01737F582290549E0054D889 /* Extensions */,
+				013653BC22903D2600B165AE /* Scenes */,
+				01E32197228C90890038FEF0 /* Misc */,
+				01E32192228B4A070038FEF0 /* Services */,
 				01E3218B228B41B00038FEF0 /* Entities */,
 				01E3218A228B3DCF0038FEF0 /* App */,
 			);
@@ -157,7 +198,6 @@
 		01E32189228B3DAE0038FEF0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				01E3215E228B3D340038FEF0 /* Main.storyboard */,
 				01E32161228B3D350038FEF0 /* Assets.xcassets */,
 				01E32163228B3D350038FEF0 /* LaunchScreen.storyboard */,
 				01E32166228B3D350038FEF0 /* Info.plist */,
@@ -181,6 +221,22 @@
 				01E32190228B44970038FEF0 /* Achievement.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		01E32192228B4A070038FEF0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				01E32193228B4AA60038FEF0 /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		01E32197228C90890038FEF0 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				0126D9DE228C9105000CE0AA /* NetwokError.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		AE9F31A24CB8B4402A4A32CE /* Frameworks */ = {
@@ -316,7 +372,6 @@
 			files = (
 				01E32165228B3D350038FEF0 /* LaunchScreen.storyboard in Resources */,
 				01E32162228B3D350038FEF0 /* Assets.xcassets in Resources */,
-				01E32160228B3D340038FEF0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,12 +446,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-mobiapps-exercice/Pods-mobiapps-exercice-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -432,11 +489,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01737F5A229054AB0054D889 /* Extension.swift in Sources */,
+				013653C022903D6E00B165AE /* CategoriesViewController.swift in Sources */,
 				01E3218D228B447B0038FEF0 /* Group.swift in Sources */,
-				01E3215D228B3D340038FEF0 /* ViewController.swift in Sources */,
+				0126D9DF228C9105000CE0AA /* NetwokError.swift in Sources */,
+				01737F682291A5120054D889 /* AchievementDetailsViewController.swift in Sources */,
+				01737F5C22915E520054D889 /* AchievementsViewController.swift in Sources */,
+				01737F57229053240054D889 /* CategoryCell.swift in Sources */,
 				01E3215B228B3D340038FEF0 /* AppDelegate.swift in Sources */,
 				01E3218F228B44870038FEF0 /* Category.swift in Sources */,
 				01E32191228B44970038FEF0 /* Achievement.swift in Sources */,
+				01E32194228B4AA60038FEF0 /* APIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +507,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E32170228B3D350038FEF0 /* mobiapps_exerciceTests.swift in Sources */,
+				01737F6222919CF30054D889 /* AchievementTests.swift in Sources */,
+				01737F5E229198A00054D889 /* GroupTests.swift in Sources */,
+				01737F6422919E440054D889 /* APIServiceTests.swift in Sources */,
+				01737F6022919CDD0054D889 /* CategoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,14 +538,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		01E3215E228B3D340038FEF0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01E3215F228B3D340038FEF0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		01E32163228B3D350038FEF0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -613,7 +671,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "mobiapps-exercice/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/mobiapps-exercice/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,7 +689,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "mobiapps-exercice/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/mobiapps-exercice/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

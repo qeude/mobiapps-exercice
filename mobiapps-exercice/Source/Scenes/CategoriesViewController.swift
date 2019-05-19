@@ -12,29 +12,37 @@ class CategoriesViewController : UITableViewController{
     let cellReuseId = "cellReuseId"
     private var groups : [Group] = []
     private var categories : [[Category]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Creating a "DispatchGroup" to know when all categories are fetch for each group
         let dispatchGroup = DispatchGroup()
+        // Fetching groups
         APIService.getAllGroups{ result in
             switch result{
             case .success(let groups):
                 self.groups = groups
+                // Fetching categories foreach group
                 for (idx,group) in groups.enumerated(){
-                    dispatchGroup.enter()
-                    APIService.getCategoriesByGroup(group: group){
-                        res in
-                        switch res{
-                        case .success(let categories):
-                            self.categories.insert(categories, at: idx)
-                            dispatchGroup.leave()
-                        case .failure(let err):
-                            print(err)
-                        }
-                    }
+                    self.categories.insert([Category(identifier: idx+1, name: "test", description: "salut", order: 1, iconUrl: "https://fr.freelogodesign.org/Content/img/logo-ex-2.png", achievements: [1,23,42,12,24,54])], at: idx)
+//                    dispatchGroup.enter()
+//                    APIService.getCategoriesByGroup(group: group){
+//                        res in
+//                        switch res{
+//                        case .success(let categories):
+//                            // Insert categories list at the same index as the group to put the list in the right section
+//                            self.categories.insert(categories, at: idx)
+//                            dispatchGroup.leave()
+//                        case .failure(let err):
+//                            print(err)
+//                        }
+//                    }
                 }
-                dispatchGroup.notify(queue: .main){
-                    self.tableView.reloadData()
-                }
+                  self.tableView.reloadData()
+                // When all requests for categories ended
+//                dispatchGroup.notify(queue: .main){
+//                    self.tableView.reloadData()
+//                }
             case .failure(let error):
                 print(error)
             }
@@ -48,7 +56,7 @@ class CategoriesViewController : UITableViewController{
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width:20, height: 20))
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
         let label = UILabel(frame: CGRect(x: 20, y: 10, width: tableView.frame.width, height: 20))
         label.text = groups[section].name
         label.textColor = .black
@@ -57,7 +65,6 @@ class CategoriesViewController : UITableViewController{
         view.addSubview(label)
         return view
     }
-    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
@@ -76,9 +83,14 @@ class CategoriesViewController : UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! CategoryCell
-        
         let category = categories[indexPath.section][indexPath.row]
         cell.category = category
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let achievementsViewController = AchievementsViewController()
+        achievementsViewController.selectedCategory = categories[indexPath.section][indexPath.row]
+        navigationController?.pushViewController(achievementsViewController, animated: true)        
     }
 }
