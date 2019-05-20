@@ -39,7 +39,7 @@ class AchievementDetailsViewController : UIViewController {
         
         // Description content label
         descriptionContentLabel = UILabel()
-        descriptionContentLabel.text = self.selectedAchievement?.description
+        descriptionContentLabel.text = (self.selectedAchievement?.description.isEmpty ?? true ? "No description." : self.selectedAchievement?.description)
         descriptionContentLabel.lineBreakMode = .byWordWrapping
         descriptionContentLabel.numberOfLines = 0
         scrollView.addSubview(descriptionContentLabel)
@@ -54,7 +54,7 @@ class AchievementDetailsViewController : UIViewController {
 
         // Requirements content label
         requirementContentLabel = UILabel()
-        requirementContentLabel.text = self.selectedAchievement?.requirement
+        requirementContentLabel.text = (self.selectedAchievement?.requirement.isEmpty ?? true ? "No requirements." : self.selectedAchievement?.requirement)
         requirementContentLabel.lineBreakMode = .byWordWrapping
         requirementContentLabel.numberOfLines = 0
         scrollView.addSubview(requirementContentLabel)

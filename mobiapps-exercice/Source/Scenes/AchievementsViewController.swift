@@ -11,25 +11,22 @@ import UIKit
 class AchievementsViewController : UITableViewController {
     let cellReuseId = "cellId"
     var selectedCategory : Category? = nil
-    private var achievements : [Achievement] = [
-        Achievement(identifier: 1, name: "Achievement1", description: "Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievementDescription of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement1Description of the achievement", requirement: "No requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirementsNo requirements"),
-        Achievement(identifier: 2, name: "Achievement2", description: "Description of the achievement2", requirement: "No requirement"),
-        Achievement(identifier: 3, name: "Achievement3", description: "Description of the achievement3", requirement: "No requirement"),
-        Achievement(identifier: 4, name: "Achievement4", description: "Description of the achievement4", requirement: "No requirement"),
-    ]
+    private var achievements : [Achievement] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        APIService.getAchievementsByCategory(category: self.selectedCategory!){result in
-//            switch result{
-//            case .success(let achievements):
-//                self.achievements = achievements
-//                self.tableView.reloadData()
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+        
+        // Fetching achievement for the given category
+        APIService.getAchievementsByCategory(category: self.selectedCategory!){result in
+            switch result{
+            case .success(let achievements):
+                self.achievements = achievements
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
         navigationItem.title = self.selectedCategory?.name
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)

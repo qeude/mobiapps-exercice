@@ -11,7 +11,7 @@ import UIKit
 class CategoriesViewController : UITableViewController{
     let cellReuseId = "cellReuseId"
     private var groups : [Group] = []
-    private var categories : [[Category]] = []
+    private var categories : [String : [Category]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,26 +23,25 @@ class CategoriesViewController : UITableViewController{
             case .success(let groups):
                 self.groups = groups
                 // Fetching categories foreach group
-                for (idx,group) in groups.enumerated(){
-                    self.categories.insert([Category(identifier: idx+1, name: "test", description: "salut", order: 1, iconUrl: "https://fr.freelogodesign.org/Content/img/logo-ex-2.png", achievements: [1,23,42,12,24,54])], at: idx)
-//                    dispatchGroup.enter()
-//                    APIService.getCategoriesByGroup(group: group){
-//                        res in
-//                        switch res{
-//                        case .success(let categories):
-//                            // Insert categories list at the same index as the group to put the list in the right section
-//                            self.categories.insert(categories, at: idx)
-//                            dispatchGroup.leave()
-//                        case .failure(let err):
-//                            print(err)
-//                        }
-//                    }
+                for group in groups{
+                    dispatchGroup.enter()
+                    APIService.getCategoriesByGroup(group: group){
+                        res in
+                        switch res{
+                        case .success(let categories):
+                            // Insert categories list with a key equal to related group identifier
+                            self.categories[group.identifier] = categories
+                            dispatchGroup.leave()
+                        case .failure(let err):
+                            print(err)
+                        }
+                    }
                 }
-                  self.tableView.reloadData()
+//                  self.tableView.reloadData()
                 // When all requests for categories ended
-//                dispatchGroup.notify(queue: .main){
-//                    self.tableView.reloadData()
-//                }
+                dispatchGroup.notify(queue: .main){
+                    self.tableView.reloadData()
+                }
             case .failure(let error):
                 print(error)
             }
@@ -78,19 +77,19 @@ class CategoriesViewController : UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories[section].count
+        return categories[groups[section].identifier]?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! CategoryCell
-        let category = categories[indexPath.section][indexPath.row]
+        guard let category = categories[groups[indexPath.section].identifier]?[indexPath.row] else {return cell}
         cell.category = category
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let achievementsViewController = AchievementsViewController()
-        achievementsViewController.selectedCategory = categories[indexPath.section][indexPath.row]
+        achievementsViewController.selectedCategory = categories[groups[indexPath.section].identifier]?[indexPath.row]
         navigationController?.pushViewController(achievementsViewController, animated: true)        
     }
 }
