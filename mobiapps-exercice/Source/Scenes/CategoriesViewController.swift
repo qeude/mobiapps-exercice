@@ -11,27 +11,34 @@ import UIKit
 class CategoriesViewController : UITableViewController{
     let cellReuseId = "cellReuseId"
     private var groups : [Group] = []
-    private var categories : [[Category]] = []
+    private var categories : [String : [Category]] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Creating a "DispatchGroup" to know when all categories are fetch for each group
         let dispatchGroup = DispatchGroup()
+        // Fetching groups
         APIService.getAllGroups{ result in
             switch result{
             case .success(let groups):
                 self.groups = groups
-                for (idx,group) in groups.enumerated(){
+                // Fetching categories foreach group
+                for group in groups{
                     dispatchGroup.enter()
                     APIService.getCategoriesByGroup(group: group){
                         res in
                         switch res{
                         case .success(let categories):
-                            self.categories.insert(categories, at: idx)
+                            // Insert categories list with a key equal to related group identifier
+                            self.categories[group.identifier] = categories
                             dispatchGroup.leave()
                         case .failure(let err):
                             print(err)
                         }
                     }
                 }
+//                  self.tableView.reloadData()
+                // When all requests for categories ended
                 dispatchGroup.notify(queue: .main){
                     self.tableView.reloadData()
                 }
@@ -48,7 +55,7 @@ class CategoriesViewController : UITableViewController{
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width:20, height: 20))
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
         let label = UILabel(frame: CGRect(x: 20, y: 10, width: tableView.frame.width, height: 20))
         label.text = groups[section].name
         label.textColor = .black
@@ -57,7 +64,6 @@ class CategoriesViewController : UITableViewController{
         view.addSubview(label)
         return view
     }
-    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
@@ -71,14 +77,19 @@ class CategoriesViewController : UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories[section].count
+        return categories[groups[section].identifier]?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! CategoryCell
-        
-        let category = categories[indexPath.section][indexPath.row]
+        guard let category = categories[groups[indexPath.section].identifier]?[indexPath.row] else {return cell}
         cell.category = category
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let achievementsViewController = AchievementsViewController()
+        achievementsViewController.selectedCategory = categories[groups[indexPath.section].identifier]?[indexPath.row]
+        navigationController?.pushViewController(achievementsViewController, animated: true)        
     }
 }

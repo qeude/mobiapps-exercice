@@ -14,7 +14,7 @@ struct Category : Codable{
     var description: String
     var order : Int
     var iconUrl : String
-    var achievementsIdentifiers: [Int]
+    var achievements: [Int]
     
     enum CodingKeys: String, CodingKey {
         case identifier = "id"
@@ -22,7 +22,7 @@ struct Category : Codable{
         case description
         case order
         case iconUrl = "icon"
-        case achievementsIdentifiers = "achievements"
+        case achievements
     }
     
 }
