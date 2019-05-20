@@ -12,7 +12,39 @@ class AchievementTests: XCTestCase {
 
     func testInitAchievement(){
         let jsonString = """
-        
+        {
+          "id": 2835,
+          "name": "Slippery Slubling",
+          "description": "",
+          "requirement": "Ensure that someone in your raid squad is holding the golden slubling so that it may witness the death of Slothasor.",
+          "locked_text": "",
+          "type": "Default",
+          "flags": [
+            "Permanent"
+          ],
+          "tiers": [
+            {
+              "count": 1,
+              "points": 15
+            }
+          ],
+          "rewards": [
+            {
+              "type": "Item",
+              "id": 77869,
+              "count": 1
+            },
+            {
+              "type": "Mastery",
+              "region": "Maguuma",
+              "id": 168
+            },
+            {
+              "type": "Title",
+              "id": 238
+            }
+          ]
+        }
         """
         
         guard let data = jsonString.data(using: .utf8) else {
@@ -26,10 +58,10 @@ class AchievementTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(achievement.identifier, 123, "Wrong achievement identifier")
-        XCTAssertEqual(achievement.name, "General", "Wrong achievement name")
-        XCTAssertEqual(achievement.description, "Achievements for accomplishments throughout Central Tyria.", "Wrong achievement description")
-        XCTAssertEqual(achievement.requirement, "", "Wrong achievement requirement")
+        XCTAssertEqual(achievement.identifier, 2835, "Wrong achievement identifier")
+        XCTAssertEqual(achievement.name, "Slippery Slubling", "Wrong achievement name")
+        XCTAssertEqual(achievement.description, "", "Wrong achievement description")
+        XCTAssertEqual(achievement.requirement, "Ensure that someone in your raid squad is holding the golden slubling so that it may witness the death of Slothasor.", "Wrong achievement requirement")
     }
 
 }

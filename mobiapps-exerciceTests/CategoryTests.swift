@@ -12,7 +12,24 @@ class CategoryTests: XCTestCase {
 
     func testInitCategory(){
         let jsonString = """
-        
+        {
+            "id": 134,
+            "name": "Salvation Pass",
+            "description": "",
+            "order": 10,
+            "icon": "https://render.guildwars2.com/file/9F5C23543CB8C715B7022635C10AA6D5011E74B3/1302679.png",
+            "achievements": [
+              2826,
+              2835,
+              2830,
+              2831,
+              2824,
+              2832,
+              2836,
+              2821,
+              2823
+            ]
+        }
         """
         
         guard let data = jsonString.data(using: .utf8) else {
@@ -26,11 +43,11 @@ class CategoryTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(category.identifier, 123, "Wrong category identifier")
-        XCTAssertEqual(category.name, "General", "Wrong category name")
-        XCTAssertEqual(category.description, "Achievements for accomplishments throughout Central Tyria.", "Wrong category description")
-        XCTAssertEqual(category.order, 4, "Wrong category order")
-        XCTAssertEqual(category.iconUrl, "" ,"Wrong category iconUrl")
+        XCTAssertEqual(category.identifier, 134, "Wrong category identifier")
+        XCTAssertEqual(category.name, "Salvation Pass", "Wrong category name")
+        XCTAssertEqual(category.description, "", "Wrong category description")
+        XCTAssertEqual(category.order, 10, "Wrong category order")
+        XCTAssertEqual(category.iconUrl, "https://render.guildwars2.com/file/9F5C23543CB8C715B7022635C10AA6D5011E74B3/1302679.png" ,"Wrong category iconUrl")
     }
 
 }
